@@ -1,0 +1,34 @@
+#container {
+  display: table;
+	width: 50%;
+	margin: 0px auto;
+	height: 60px;
+	border: 3px solid #F6F6F6;
+}
+select {
+	width: 200px;
+	margin: 10px;
+}
+#primarybox {
+	display: table-cell;
+}
+#inputtags {
+	display: table-cell;
+	padding-left: 10px;
+	padding-right: 10px;
+	position: relative;
+	top:-62px;
+}
+#add {
+    display: table;
+	vertical-align: top;
+}
+#remove {
+	display: table-cell;
+}
+input {
+	display: block;
+	background-color: red;
+	margin-top: 10px;
+	color: white;
+}
