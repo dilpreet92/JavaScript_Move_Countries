@@ -10,17 +10,17 @@ select {
 	margin: 10px;
 }
 #primarybox {
-	display: table-cell;
+  display: table-cell;
 }
 #inputtags {
-	display: table-cell;
-	padding-left: 10px;
-	padding-right: 10px;
-	position: relative;
+ 	display: table-cell;
+ 	padding-left: 10px;
+ 	padding-right: 10px;
+ 	position: relative;
 	top:-62px;
 }
 #add {
-    display: table;
+  display: table;
 	vertical-align: top;
 }
 #remove {
