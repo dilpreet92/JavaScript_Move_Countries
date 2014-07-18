@@ -7,28 +7,29 @@
 }
 select {
   width : 200px;
-	margin : 10px;
+  margin : 10px;
 }
+
 #primarybox {
   display : table-cell;
 }
 #inputtags {
- 	display : table-cell;
- 	padding-left : 10px;
- 	padding-right : 10px;
- 	position : relative;
-	top : -62px;
+  display : table-cell;
+  padding-left : 10px;
+  padding-right : 10px;
+  position : relative;
+  top : -62px;
 }
 #add {
   display : table;
-	vertical-align : top;
+  vertical-align : top;
 }
 #remove {
-	display : table-cell;
+  display : table-cell;
 }
 input {
-	display : block;
-	background-color : red;
-	margin-top : 10px;
-	color : white;
+  display : block;
+  background-color : red;
+  margin-top : 10px;
+  color : white;
 }
