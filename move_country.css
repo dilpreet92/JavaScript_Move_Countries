@@ -1,12 +1,12 @@
 #container {
   display : table;
-	width : 50%;
-	margin : 0px auto;
-	height : 60px;
-	border : 3px solid #F6F6F6;
+  width : 50%;
+  margin : 0px auto;
+  height : 60px;
+  border : 3px solid #F6F6F6;
 }
 select {
-	width : 200px;
+  width : 200px;
 	margin : 10px;
 }
 #primarybox {
