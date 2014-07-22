@@ -1,4 +1,8 @@
-function MoveItem() {
+function MoveItem(getElements) {
+  this.primarySelectElem = getElements.primarySelect;
+  this.secondarySelectElem = getElements.secondarySelect;
+  this.addBttnElem = getElements.addBttn;
+  this.removeBttnElem = getElements.removeBttn;
   this.selectedItem = ""; 
 }
 
@@ -16,21 +20,22 @@ MoveItem.prototype.addToList = function(fromSelectBox, toSelectBox) {
 
 MoveItem.prototype.bindEvents = function() {
   var _this = this;
-  addBttn.addEventListener("click", function() {
-    _this.addToList(primarySelect, secondarySelect);
+  this.addBttnElem.addEventListener("click", function() {
+    _this.addToList(_this.primarySelectElem, _this.secondarySelectElem);
   });
-  removeBttn.addEventListener("click", function() {
-    _this.addToList(secondarySelect, primarySelect);
+  this.removeBttnElem.addEventListener("click", function() {
+    _this.addToList(_this.secondarySelectElem, _this.primarySelectElem);
   });  
 };
 
-function createItemMover() {
-  var itemMover = new MoveItem();
+function createItemMover(getElements) {
+  var itemMover = new MoveItem(getElements);
   itemMover.bindEvents();
 }
-
-var primarySelect = document.getElementById("primaryBox"),
-    secondarySelect = document.getElementById("secondaryBox"),
-    addBttn = document.getElementById("Add"),
-    removeBttn = document.getElementById("Remove");
-window.onload = createItemMover();
+var elements = {
+  "primarySelect" : document.getElementById("primaryBox"),
+  "secondarySelect" : document.getElementById("secondaryBox"),
+  "addBttn" : document.getElementById("Add"),
+  "removeBttn" : document.getElementById("Remove")
+};
+window.onload = createItemMover(elements);
