@@ -1,4 +1,4 @@
-function MoveItem(getElements) {
+function checkEvent(getElements) {
   this.primarySelectElem = getElements.primarySelect;
   this.secondarySelectElem = getElements.secondarySelect;
   this.addBttnElem = getElements.addBttn;
@@ -6,8 +6,8 @@ function MoveItem(getElements) {
   this.selectedItem = ""; 
 }
 
-MoveItem.prototype.addToList = function(fromSelectBox, toSelectBox) {
-  this.selectedItem = fromSelectBox.options[fromSelectBox.selectedIndex];
+checkEvent.prototype.addToList = function(fromSelectBox, toSelectBox) {
+  this.selectedItem = fromSelectBox.selectedOptions[0];
   if (!fromSelectBox.options.length) {
     alert("No Items Present");
   }
@@ -18,7 +18,7 @@ MoveItem.prototype.addToList = function(fromSelectBox, toSelectBox) {
   fromSelectBox.removeChild(this.selectedItem);
 };
 
-MoveItem.prototype.bindEvents = function() {
+checkEvent.prototype.bindEvents = function() {
   var _this = this;
   this.addBttnElem.addEventListener("click", function() {
     _this.addToList(_this.primarySelectElem, _this.secondarySelectElem);
@@ -29,7 +29,7 @@ MoveItem.prototype.bindEvents = function() {
 };
 
 function createItemMover(getElements) {
-  var itemMover = new MoveItem(getElements);
+  var itemMover = new checkEvent(getElements);
   itemMover.bindEvents();
 }
 var elements = {
@@ -37,5 +37,5 @@ var elements = {
   "secondarySelect" : document.getElementById("secondaryBox"),
   "addBttn" : document.getElementById("Add"),
   "removeBttn" : document.getElementById("Remove")
-};
+};  
 window.onload = createItemMover(elements);
