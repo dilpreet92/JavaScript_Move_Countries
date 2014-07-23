@@ -7,11 +7,10 @@ function checkEvent(getElements) {
 }
 
 checkEvent.prototype.addToList = function(fromSelectBox, toSelectBox) {
-  this.selectedItem = fromSelectBox.selectedOptions[0];
+  this.selectedItem = fromSelectBox.options[fromSelectBox.selectedIndex];
   if (!fromSelectBox.options.length) {
     alert("No Items Present");
-  }
-  else if (!this.selectedItem) {
+  } else if (!this.selectedItem) {
     alert("Please Select an item");
   }
   toSelectBox.appendChild(this.selectedItem);
