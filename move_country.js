@@ -14,7 +14,6 @@ checkEvent.prototype.addToList = function(fromSelectBox, toSelectBox) {
     alert("Please Select an item");
   }
   toSelectBox.appendChild(this.selectedItem);
-  fromSelectBox.removeChild(this.selectedItem);
 };
 
 checkEvent.prototype.bindEvents = function() {
