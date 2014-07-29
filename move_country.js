@@ -7,13 +7,14 @@ function checkEvent(getElements) {
 }
 
 checkEvent.prototype.addToList = function(fromSelectBox, toSelectBox) {
-  this.selectedItem = fromSelectBox.options[fromSelectBox.selectedIndex];
-  if (!fromSelectBox.options.length) {
-    alert("No Items Present");
-  } else if (!this.selectedItem) {
-    alert("Please Select an item");
+  for (var i =0 ; i < fromSelectBox.options.length ;) {
+    if(fromSelectBox.options[i].selected) {
+      toSelectBox.appendChild(fromSelectBox.options[i]);
+    }
+    else {
+      i++;
+    }
   }
-  toSelectBox.appendChild(this.selectedItem);
 };
 
 checkEvent.prototype.bindEvents = function() {
