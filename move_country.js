@@ -6,16 +6,9 @@ function MoveCountry (elements) {
 }
 
 MoveCountry.prototype.addToList = function(fromSelectBox, toSelectBox) {
-  var fragment = document.createDocumentFragment();
-  for (var i = 0 ; i < fromSelectBox.options.length ;) {
-    if (fromSelectBox.options[i].selected) {
-      fragment.appendChild(fromSelectBox.options[i]);
-    }
-    else {
-      i++;
-    }
+  while(fromSelectBox.options.selectedIndex >= 0) {
+    toSelectBox.appendChild(fromSelectBox.options[fromSelectBox.selectedIndex]);
   }
-  toSelectBox.appendChild(fragment);
 };
 
 MoveCountry.prototype.bindEvents = function() {
